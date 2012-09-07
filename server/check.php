@@ -16,34 +16,36 @@ $ip = gethostbyname($_GET['domain']);
 // Agar domen IPsi aniqlanmasa, chiqadi
 if (empty($ip) || ($ip == $_GET['domain'])) exit(STATUS_INVALID);
 // IPning son ko‘rinishini
-$ip = ip2long($ip);
+//$ip = ip2long($ip);
 
 $subnets_file_content = '';
+
+if (file_exists(FILE_NAME)) {
+	$subnets_file_content = file_get_contents(FILE_NAME);
+}
 
 // Zonalar fayli mavjudmasmi?
 // Bo‘shmi?
 // Yangilanganiga bir hafta bo‘ldimi?
 if (!file_exists(FILE_NAME) || 
-	(strlen($subnets_file_content = file_get_contents(FILE_NAME)) == 0) || 
+	empty($subnets_file_content) || 
 	((time() - filemtime(FILE_NAME)) > EXPIRE_TIME))
 {
-	// U holda yangilanadi zonalar
+	// yangilanadi zonalar
 	$subnets_file_content = update_subnets();
 }
 
-// Agar zonalar o‘qilmagan bo‘lsa o‘qiladi
-if (empty($subnets_file_content)) $subnets_file_content = file_get_contents(FILE_NAME);
 // Shunda ham zonalar bo‘sh bo‘lsa, chiqadi
 if (empty($subnets_file_content)) exit(STATUS_INVALID);
 
 // IP‘ni zonalarga tekshirish
-$subnet_array = explode("\n", $subnets);
+$cidr_array = explode("\n", $subnets);
 $on_tasix = FALSE;
-foreach ($subnet_array as $subnet)
+foreach ($cidr_array as $cidr)
 {
-	$zone = explode("\t", $subnet);
+	//$zone = explode("\t", $subnet);
 	// IP zona diapazonidami?
-	if (($ip >= ip2long($zone[0])) && ($ip <= ip2long($zone[1])))
+	if (CIDR::IPisWithinCIDR($ip, $cidr))
 	{
 		$on_tasix = TRUE;
 		break;
@@ -57,11 +59,9 @@ else echo STATUS_NOT_ON_TASIX;
 // Zonalarni voydod saytidan olish va ularni faylga saqlab qo‘yish
 function update_subnets()
 {
-	require 'simple_html_dom.php';
+	$content = file_get_contents('http://tasix.sarkor.uz/full');
 	
-	$html = file_get_html('http://voydod.uz/tasix_subnets.php');
-	$subnets = $html->find('textarea[id=ips]', 0)->innertext;
+	if (!empty($content)) file_put_contents('subnets.txt', $content);
 	
-	if (strlen($subnets) > 0) file_put_contents('subnets.txt', $subnets);
-	return $subnets;
+	return $content;
 }
