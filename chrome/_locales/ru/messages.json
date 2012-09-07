@@ -1,0 +1,17 @@
+{
+	"extName": {
+		"message": "Tas-ix"
+	},
+	"extDesc": {
+		"message": "Проверка сайта на нахождение в сети Tas-ix(для Узбекистана)."
+	},
+	"inactive": {
+		"message": "Проверяется…"
+	},
+	"tasix": {
+		"message": "Tas-ix!"
+	},
+	"other": {
+		"message": "Осторожно… сайт находиться вне сети Tas-ix!"
+	}
+}
