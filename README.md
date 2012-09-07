@@ -1,4 +1,4 @@
 Tasix Checker
 =============
 
-Saytlarni Tasiks tarmog‘ida joylashganligini tekshiradigan kengaytma (brauzerlar uchun)
+Saytlarni Tasix tarmog‘ida (http://tas-ix.uz/) joylashganligini tekshiradigan kengaytma (brauzerlar uchun)

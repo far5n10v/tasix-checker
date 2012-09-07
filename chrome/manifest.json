@@ -10,7 +10,7 @@
 	},
 	"permissions": [
 		"tabs",
-		"http://farhodjon.uz/*"
+//		"http://farhodjon.uz/*"
 	],
 	"icons": {
 		"128": "icons/128.png",

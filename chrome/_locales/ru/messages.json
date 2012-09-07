@@ -1,9 +1,9 @@
 {
 	"extName": {
-		"message": "Tas-ix"
+		"message": "Tas-ix Checker"
 	},
 	"extDesc": {
-		"message": "Проверка сайта на нахождение в сети Tas-ix(для Узбекистана)."
+		"message": "Проверка сайта на нахождение в сети Tas-ix (для Узбекистана)."
 	},
 	"inactive": {
 		"message": "Проверяется…"
