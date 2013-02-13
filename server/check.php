@@ -36,7 +36,7 @@ if (!file_exists(FILE_NAME) ||
 if (empty($subnets_file_content)) exit(STATUS_INVALID);
 
 // IP‘ni zonalarga tekshirish
-$cidr_array = explode("\n", $subnets);
+$cidr_array = explode("\n", $subnets_file_content);
 $on_tasix = FALSE;
 foreach ($cidr_array as $cidr) {
 	// IP zona diapazonidami?
