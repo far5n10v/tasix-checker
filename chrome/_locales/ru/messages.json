@@ -5,7 +5,7 @@
 	"extDesc": {
 		"message": "Проверка сайта на нахождение в сети Tas-ix (для Узбекистана)."
 	},
-	"inactive": {
+	"checking": {
 		"message": "Проверяется…"
 	},
 	"tasix": {

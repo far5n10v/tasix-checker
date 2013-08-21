@@ -1,16 +1,23 @@
 {
+	"manifest_version": 2,
 	"name": "__MSG_extName__",
-	"version": "1.42",
+	"version": "2.0",
 	"description": "__MSG_extDesc__",
+	"homepage_url": "http://farhodjon.uz/projects/tasix-checker/",
 	"default_locale": "ru",
-	"background_page": "background.html",
+	// "background_page": "background.html",
+	"background": {
+		"page": "background.html"
+	},
 	"page_action": {
 		"default_icon": "icons/inactive.png",
-		"default_title": "__MSG_inactive__"
+		"default_title": "__MSG_checking__"
 	},
 	"permissions": [
 		"tabs",
-//		"http://farhodjon.uz/*"
+		"webNavigation",
+		"webRequest",
+		"<all_urls>"
 	],
 	"icons": {
 		"128": "icons/128.png",
