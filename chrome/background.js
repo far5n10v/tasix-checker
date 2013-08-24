@@ -12,7 +12,7 @@ function getDomainFromURL(url) {
 // Tabda ochilgan sayt tasiksda
 // Tasiks ikonkasi yashilga o‘zgartiriladi
 // va mos matn qo‘yiladi
-function setActive(tabId) {
+function setTasixIcon(tabId) {
   chrome.pageAction.setIcon({
     tabId: tabId,
     path: 'icons/16.png'
@@ -24,7 +24,7 @@ function setActive(tabId) {
 }
 
 // Tabda ochilgan sayt tasiksda emas
-function setInactive(tabId) {
+function setNoTasixIcon(tabId) {
   chrome.pageAction.setIcon({
     tabId: tabId,
     path: 'icons/other.png'

@@ -9,8 +9,11 @@
 	"background": {
 		"page": "background.html"
 	},
-	"page_action": {
-		"default_icon": "icons/inactive.png",
+	"browser_action": {
+		"default_icon": {
+      "19": "images/19-checking.png",
+      "38": "images/38-checking.png"
+    },
 		"default_title": "__MSG_checking__"
 	},
 	"permissions": [
