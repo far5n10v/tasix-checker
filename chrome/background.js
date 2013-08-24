@@ -1,5 +1,84 @@
-var host = "http://farhodjon.uz/";
+CIDR_SOURCE_URL = 'http://tasix.sarkor.uz/full';
+FILTER_ALL_URLS = { urls: ['<all_urls>'] };
 
+// URLdan domenni qirqib olish
+function getDomainFromURL(url) {
+  url = url.replace(new RegExp(/\\/g), '/');
+  url = url.replace(new RegExp(/^http\:\/\/|^https\:\/\/|^ftp\:\/\//i), '');
+  url = url.replace(new RegExp(/\/(.*)/), '');
+  return url;
+}
+
+// Tabda ochilgan sayt tasiksda
+// Tasiks ikonkasi yashilga o‘zgartiriladi
+// va mos matn qo‘yiladi
+function setActive(tabId) {
+  chrome.pageAction.setIcon({
+    tabId: tabId,
+    path: 'icons/16.png'
+  });
+  chrome.pageAction.setTitle({
+    tabId: tabId,
+    title: chrome.i18n.getMessage('tasix')
+  });
+}
+
+// Tabda ochilgan sayt tasiksda emas
+function setInactive(tabId) {
+  chrome.pageAction.setIcon({
+    tabId: tabId,
+    path: 'icons/other.png'
+  });
+  chrome.pageAction.setTitle({
+    tabId: tabId,
+    title: chrome.i18n.getMessage('other')
+  });
+}
+
+chrome.webRequest.onBeforeRequest.addListener(
+  function (details) {
+    if (!details.tabId || details.tabId == -1) {
+      return;
+    }
+
+    var isMainFrame = (details.type == 'main_frame');
+    if (!isMainFrame) {
+      return;
+    }
+  },
+  FILTER_ALL_URLS
+);
+
+chrome.webRequest.onResponseStarted.addListener(
+  function (details) {
+    if (!details.tabId || details.tabId == -1) {
+      return;
+    }
+
+    var isMainFrame = (details.type == 'main_frame');
+    if (!isMainFrame) {
+      return;
+    }
+
+    var domain = getDomainFromURL(details.url);
+
+  },
+  FILTER_ALL_URLS
+);
+
+function reloadRanges() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      var response = xhr.responseText;
+      localStorage['cidr'] = response;
+    }
+  }
+  xhr.open('GET', CIDR_SOURCE_URL, true);
+  xhr.send();
+}
+
+/*
 // lokal 200 tadan domen saqlanadi
 var MAX_LOCAL_SITES_COUNT = 200;
 
@@ -98,4 +177,4 @@ function checkForTasix(tabId, changeInfo, tab) {
 };
 
 // Tab yangilanganda tekshiriladi
-chrome.tabs.onUpdated.addListener(checkForTasix);
+chrome.tabs.onUpdated.addListener(checkForTasix);*/
