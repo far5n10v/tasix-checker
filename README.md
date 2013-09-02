@@ -3,7 +3,7 @@ Tas-ix Checker
 
 http://farhodjon.uz/projects/tasix-checker/
 
-Saytlarni Tasix tarmog‘ida (http://tas-ix.uz/) joylashganligini tekshiradigan kengaytma (brauzerlar uchun). Kengaytma saytlarni Tas-ix tarmog‘ida joylashganini tekshiradi va har bir tabga mos ikonka ko‘rsatadi.
+Saytlarni Tasix tarmog‘ida (http://tas-ix.uz/) joylashganligini tekshiradigan kengaytma. Kengaytma saytlarni Tas-ix tarmog‘ida joylashganini tekshiradi va har bir tabga mos ikonka ko‘rsatadi.
 Mos indikator brauzer oynasida paydo bo‘ladi va uch xil rang oladi:
 1. Kulrang — sayt tekshirilyapti yoki tekshirish shart emas.
 2. Qizil — sayt Tas-ix tarmog‘idan tashqarida.
@@ -15,10 +15,12 @@ Mos indikator brauzer oynasida paydo bo‘ladi va uch xil rang oladi:
 
 Endi kengaytma saytlarni lokal tekshiradi. [chrome.webRequest](http://developer.chrome.com/extensions/webRequest.html) API orqali buni bemalol tekshirish mumkin. Hozir quyidagicha ishlaydi kengaytma:
 
-1. onBeforeRequest: domen olinadi URL’dan, keshdan tekshiriladi, agar keshda mavjud bo‘lsa, mos ikonka qo‘yiladi.
-2. onResponseStarted: domen tekshiriladi keshda borligiga, bor bo‘lsa, chiqadi hodisadan (onBeforeRequest ichida tekshirilgan); yangi domen bo‘lsa, ushbu hodisada saytning IP manzili aniq, shu IP oraliqlarga tekshiriladi va mos ikonka qo‘yiladi.
+1. [onBeforeRequest](http://developer.chrome.com/extensions/webRequest.html#event-onBeforeRequest): domen olinadi URL’dan, keshdan tekshiriladi, agar keshda mavjud bo‘lsa, mos ikonka qo‘yiladi.
+2. [onResponseStarted](http://developer.chrome.com/extensions/webRequest.html#event-onResponseStarted): domen tekshiriladi keshda borligiga, bor bo‘lsa, chiqadi hodisadan (onBeforeRequest ichida tekshirilgan); yangi domen bo‘lsa, ushbu hodisada saytning IP manzili aniq, shu IP oraliqlarga tekshiriladi va mos ikonka qo‘yiladi.
 
 Oraliqlar har oyda yangilanib turiladi Sarkor saytidan: http://tasix.sarkor.uz/full.
+
+Kengaytmadagi server kodi endi kerak emas, lekin qiziquvchilar uchun qoldirildi. Serverda avtomatik aniqlovchi skriptlar yaratish uchun asqotishi mumkin.
 
 ## Minnatdorliklar
 
