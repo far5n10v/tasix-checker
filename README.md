@@ -9,7 +9,7 @@ Mos indikator brauzer oynasida paydo bo‘ladi va uch xil rang oladi:
 2. Qizil — sayt Tas-ix tarmog‘idan tashqarida.
 3. Yashil — sayt Tas-ix tarmog‘i ichida.
 
-2.0 bild O‘zbekiston Respublikasi mustaqilligining 22 yillik bayramiga bag‘ishlanadi.
+2.0 versiya O‘zbekiston Respublikasi mustaqilligining 22 yillik bayramiga bag‘ishlanadi.
 
 ## Ushbu versiyada
 
@@ -28,7 +28,7 @@ Kengaytmaning yangi versiyasini yozishda quyidagi ochiq modul/kengaytmalarning k
 - https://github.com/keverw/range_check
 - https://code.google.com/p/ipvfoo/
 
-Server tarafidagi ozroq tuzatish uchun @swede2k uchun rahmat.
+Server tarafidagi ozroq tuzatish uchun [swede2k](https://github.com/swede2k) uchun rahmat.
 
 ## Takliflar va talablar
 
