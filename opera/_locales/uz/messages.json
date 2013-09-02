@@ -1,0 +1,17 @@
+{
+	"extName": {
+		"message": "Tas-ix Checker"
+	},
+	"extDesc": {
+		"message": "Saytni Tas-ix tarmog‘iga tekshirish."
+	},
+	"inactive": {
+		"message": "Tekshirilyapti…"
+	},
+	"tasix": {
+		"message": "Tas-ix!"
+	},
+	"other": {
+		"message": "Diqqat… sayt Tas-ix’dan tashqarida!"
+	}
+}

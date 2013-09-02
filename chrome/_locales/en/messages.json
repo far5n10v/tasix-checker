@@ -1,0 +1,20 @@
+{
+	"extName": {
+		"message": "Tas-ix Checker"
+	},
+	"extDesc": {
+		"message": "Saytlarni Tas-ix tarmog‘ida joylashganligiga tekshirish (O‘zbekiston uchun)"
+	},
+	"checking": {
+		"message": "Tekshirilyapti..."
+	},
+	"tasix": {
+		"message": "Sayt Tas-ix tarmog‘i ichida"
+	},
+	"notasix": {
+		"message": "Sayt Tas-ix tarmog‘idan tashqarida"
+	},
+	"tasixmode": {
+		"message": "Tas-ix rejimi yoqilgan! Siz faqat Tas-ix tarmog‘i ichida joylashgan saytlargagina tashrif buyura olasiz."
+	}
+}

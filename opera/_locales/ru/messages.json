@@ -1,0 +1,20 @@
+{
+	"extName": {
+		"message": "Tas-ix Checker"
+	},
+	"extDesc": {
+		"message": "Проверка сайта на нахождение в сети Tas-ix (для Узбекистана)"
+	},
+	"checking": {
+		"message": "Проверяется…"
+	},
+	"tasix": {
+		"message": "Сайт находиться в сети Tas-ix"
+	},
+	"notasix": {
+		"message": "Сайт находиться вне сети Tas-ix!"
+	},
+	"tasixmode": {
+		"message": "Включен режим Tas-ix! Вы можете посещать сайты только находяшийся внутри сети Tas-ix."
+	}
+}
